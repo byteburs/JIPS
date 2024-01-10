@@ -10,10 +10,15 @@
       }
 
       header {
-        background: url("img/carousel-2.jpg") center/cover no-repeat;
-        height: 300px;
+        background: url("img/national-cancer-institute-NFvdKIhxYlU-unsplash.jpg")
+          center/cover no-repeat;
+        height: 500px;
         position: relative;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
 
       #logo {
@@ -23,25 +28,73 @@
         max-width: 100px;
       }
 
+      .mobile-nav-toggle {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        color: white;
+        margin: 0;
+        padding: 0;
+        outline: none;
+        z-index: 2;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #333;
+        padding-top: 60px;
+        transition: 0.5s;
+        z-index: 1;
+      }
+
+      .sidebar a {
+        padding: 15px 25px;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidebar a:hover {
+        background-color: #555;
+      }
+
+      header,
+      nav {
+        z-index: 0;
+      }
+
       nav {
         position: absolute;
         top: 20px;
         right: 20px;
         color: #fff;
-        background-color: #333; /* Change the background color */
         padding: 10px;
-        border-radius: 5px;
+        border-radius: 10px;
+        display: none;
       }
 
       nav a {
-        color: #fff;
+        color: #011338;
         text-decoration: none;
         margin: 0 15px;
-        font-size: 16px;
+        font-size: 20px;
+        font-weight: bold;
+        transition: color 0.3s ease-in-out;
       }
 
       nav a:hover {
-        text-decoration: underline;
+        color: black;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
       }
 
       section {
@@ -53,6 +106,16 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
+      }
+
+      .ceo-text {
+        font-weight: bold;
+        font-size: 50px;
+        color: transparent;
+        background: linear-gradient(90deg, #8b0000 50px, #000000 50px);
+        background-clip: text;
+        -webkit-background-clip: text;
+        margin-top: 50px;
       }
 
       .ceo-image {
@@ -69,6 +132,10 @@
       }
 
       @media (min-width: 768px) {
+        nav {
+          display: block;
+        }
+
         .ceo-section {
           flex-direction: row;
           justify-content: space-between;
@@ -81,21 +148,41 @@
         .course-card {
           width: 48%;
         }
+
+        .mobile-nav-toggle {
+          display: none;
+        }
+
+        .sidebar {
+          right: -250px;
+        }
       }
     </style>
   </head>
   <body>
     <header>
       <img id="logo" src="img/logo-removebg-preview.png" alt="Logo" />
-      <nav>
+      <button class="mobile-nav-toggle" onclick="toggleSidebar()">☰</button>
+      <nav id="mainNav">
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Courses</a>
         <a href="#">Contact</a>
-
         <!-- Add more navigation links as needed -->
       </nav>
+      <div class="ceo-text">
+        <span>Welcome to the </span>Best College of Paramedical in India
+      </div>
     </header>
+
+    <div class="sidebar">
+      <a href="#" onclick="toggleSidebar()">Close</a>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Courses</a>
+      <a href="#">Contact</a>
+      <!-- Add more sidebar links as needed -->
+    </div>
 
     <section id="about">
       <div class="ceo-section">
@@ -106,7 +193,6 @@
             education. Our mission is to provide top-notch training in the field
             of healthcare and produce skilled professionals who make a
             difference in the world of paramedicine.
-            shubham
           </p>
         </div>
         <img class="ceo-image" src="img/call-to-action.jpg" alt="CEO Image" />
@@ -127,5 +213,12 @@
 
       <!-- Add more course cards as needed -->
     </section>
+
+    <script>
+      function toggleSidebar() {
+        var sidebar = document.querySelector(".sidebar");
+        sidebar.style.right = sidebar.style.right === "0px" ? "-250px" : "0";
+      }
+    </script>
   </body>
 </html>
