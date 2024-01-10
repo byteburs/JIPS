@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+      }
+
+      header {
+        background: url("img/carousel-2.jpg") center/cover no-repeat;
+        height: 300px;
+        position: relative;
+        text-align: center;
+      }
+
+      #logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        max-width: 100px;
+      }
+
+      nav {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+        background-color: #333; /* Change the background color */
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 16px;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      section {
+        padding: 50px;
+      }
+
+      .ceo-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .ceo-image {
+        max-width: 200px;
+        margin-top: 20px;
+      }
+
+      .course-card {
+        border: 1px solid #ccc;
+        padding: 20px;
+        margin: 20px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      @media (min-width: 768px) {
+        .ceo-section {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+
+        .ceo-image {
+          margin-top: 0;
+        }
+
+        .course-card {
+          width: 48%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img id="logo" src="img/logo-removebg-preview.png" alt="Logo" />
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Courses</a>
+        <a href="#">Contact</a>
+
+        <!-- Add more navigation links as needed -->
+      </nav>
+    </header>
+
+    <section id="about">
+      <div class="ceo-section">
+        <div>
+          <h2>About Us</h2>
+          <p>
+            Welcome to our Paramedical Institute, where excellence meets
+            education. Our mission is to provide top-notch training in the field
+            of healthcare and produce skilled professionals who make a
+            difference in the world of paramedicine.
+          </p>
+        </div>
+        <img class="ceo-image" src="img/call-to-action.jpg" alt="CEO Image" />
+      </div>
+    </section>
+
+    <section id="courses">
+      <h2>Courses</h2>
+      <div class="course-card">
+        <h3>Course 1</h3>
+        <p>Information about Course 1 goes here...</p>
+      </div>
+
+      <div class="course-card">
+        <h3>Course 2</h3>
+        <p>Information about Course 2 goes here...</p>
+      </div>
+
+      <!-- Add more course cards as needed -->
+    </section>
+  </body>
+</html>
